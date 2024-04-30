@@ -92,7 +92,7 @@ Route::post('online-booking/step-two', [OnlineBookingController::class, 'checkZi
 Route::post('online-booking/step-three', [OnlineBookingController::class, 'storeDateData'])->name('step-three');
 Route::get('online-booking/edit-information', function(){ return view('onlineBooking.step-three'); });
 Route::post('online-booking/step-four', [OnlineBookingController::class, 'submitCustomerData']);
-Route::post('online-booking/submit-details', [OnlineBookingController::class, 'sendEmail']);
+Route::post('online-booking/submit-details', [OnlineBookingController::class, 'sendEmail'])->name('send-email');
 
 
 /*

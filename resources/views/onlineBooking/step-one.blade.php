@@ -47,7 +47,29 @@
             }
 
             #btn-service {
-                color: orange;
+                display: inline-block; /* Makes the <p> element behave like a block but inline */
+                padding: 0.375rem 0.75rem; /* Padding similar to Bootstrap's buttons */
+                font-size: 1rem; /* Standard button text size */
+                font-weight: 400; /* Normal font weight */
+                line-height: 1.5; /* Standard line height for button text */
+                text-align: center; /* Centers text inside the element */
+                white-space: nowrap; /* Prevents text from wrapping to the next line */
+                vertical-align: middle; /* Aligns text vertically in the middle */
+                user-select: none; /* Prevents text selection to mimic button behavior */
+                border: 1px solid transparent; /* Transparent border but can be set to match if needed */
+                border-radius: 50rem; /* Extremely rounded corners for a pill effect */
+                color: #fff; /* White text, typical for Bootstrap primary buttons */
+                background-color: #007bff; /* Bootstrap primary blue background */
+                border-color: #007bff; /* Border color similar to background */
+                cursor: default; /* Default cursor to indicate non-clickability */
+                text-decoration: none; /* Ensures no text decoration */
+                transition: background-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; /* Smooth transition for visual effects */
+             }
+
+            #btn-service:hover, #btn-service:focus {
+                background-color: #0056b3; /* Darker blue on hover/focus to simulate button-like interaction visually */
+                border-color: #0053bf; /* Border color to match the hover background */
+                box-shadow: none; /* No shadow to maintain non-clickable appearance */
             }
         </style>
     </head>
@@ -106,7 +128,7 @@
                                 </header>
                                 <!-- TODO add image later -->
                                 <div class="container">
-                                <p id="btn-service">{{Session::get('service_type')}}</p>
+                                <p><span id="btn-service">{{Session::get('service_type')}}</span></p>
                                     <form action="{{ url('/online-booking/step-two') }}" method="post">
                                         @csrf
                                         <div class="form-group">

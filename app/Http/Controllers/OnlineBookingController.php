@@ -44,7 +44,6 @@ class OnlineBookingController extends Controller
         }
     }
 
-
     // Step two: pick up dates
     public function storeDateData(request $request){
         // Session::put($request->date);
@@ -131,7 +130,7 @@ class OnlineBookingController extends Controller
 
         $customer_email = $email;
         $customer_name = $first_name . ' ' . $last_name;
-        $company_email = 'customer.mar.services@gmail.com';
+        $company_email = 'ofroot.technology@gmail.com';
 
         // Subject of the email
         $subject = 'Online booking request from: ' . $customer_name;
@@ -141,7 +140,7 @@ class OnlineBookingController extends Controller
 
         // associative array form
         $headers = [
-            'From' => 'customer.mar.services@gmail.com',
+            'From' => $company_email,
             // 'Reply-To' => 'customerservice@metroarearemovalservices.com', Fill this out later
             'Content-Type' => 'text/html; charset=UTF-8',
         ];
